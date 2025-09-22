@@ -1,0 +1,41 @@
+.bio {
+  order: 2;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects {
+  margin: 0 auto;
+  text-align: center;
+  order: 1;
+}
+
+video-link {
+  display: block;
+}
+
+video-link a img {
+  margin: auto;
+}
+
+video-link:not(:first-of-type) {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .bio {
+    order: 1;
+    border-top: none;
+  }
+  
+  .projects {
+    text-align: left;
+    padding: var(--space-xl) calc(var(--space-xl) * 1.5);
+    margin: 0;
+    order: 2;
+  }
+
+  video-link a img {
+    margin: 0;
+  }
+}

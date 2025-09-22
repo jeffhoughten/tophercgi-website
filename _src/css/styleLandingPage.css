@@ -1,0 +1,27 @@
+.bio {
+  order: -1;
+}
+
+.projects {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.demoReelVideo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  min-height: 50vh;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    text-align: left;
+    padding: var(--space-xl) calc(var(--space-xl) * 1.5);
+    margin: 0;
+  }
+  .demoReelVideo {
+    max-height: 100%;
+  }
+}

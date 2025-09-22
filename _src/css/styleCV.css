@@ -1,0 +1,17 @@
+.pdf {
+  text-align: left;
+  padding: var(--space-xl) calc(var(--space-xl) * 1.5);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-width: calc(100vw - var(--sidebar-width));
+}
+
+.pdf .item {
+  flex: 1;
+  height: 100%;
+  max-width: 100%;
+  border: none;
+}

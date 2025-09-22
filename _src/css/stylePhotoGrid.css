@@ -1,0 +1,55 @@
+.bio {
+  order: 2;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects {
+  margin: 0 auto;
+  text-align: center;
+  order: 1;
+}
+
+photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: -5px 0 0 -5px;
+  padding: 5%;
+}
+
+photo-item {
+  display: inline-block;
+  padding: 5px;
+  flex: 0 0 20%;
+  margin: 5px 0 0 1%;
+}
+
+.photo {
+  overflow: hidden;
+  border-radius: 5px;
+  max-height: 400px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.photo:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .bio {
+    order: 1;
+    border-top: none;
+  }
+  
+  .projects {
+    text-align: left;
+    padding: var(--space-xl) calc(var(--space-xl) * 1.5);
+    margin: 0;
+    order: 2;
+  }
+
+  photo-grid {
+    flex-direction: row;
+  }
+}

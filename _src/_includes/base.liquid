@@ -1,0 +1,79 @@
+---
+{
+  navigationOptions: {
+    listClass           : 'navBar',
+    listItemClass       : 'navBarItem',
+    activeListItemClass : 'active',
+    activeKey           : eleventyNavigation.key
+  }
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description }}">
+  <title>{{ title }}</title>
+  <meta name="author" content="Jeff Houghten">
+  <meta name="generator" content="{{ eleventy.generator }}">
+  <link rel="preload" href="/css/raleway.css" type="text/css">
+  <link rel="stylesheet" href="/css/raleway.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  {{ pageSpecificStyle }}
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="/media/chrisisabella.jpg">
+  <meta property="og:url" content="https://tophercgi.com">
+  {{ preloadVideoContent }}
+</head>
+<body>
+<page-container>
+  <header>
+    <header-container>
+      <header-logo>
+        <a href="/">Topher Isabella</a>
+      </header-logo>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+      <label for="menu-toggle" class="hamburger">
+        <hamburger-line></hamburger-line>
+        <hamburger-line></hamburger-line>
+        <hamburger-line></hamburger-line>
+      </label>
+      <nav class="nav" aria-label="Main navigation">
+  {%- assign navPages = collections.all | eleventyNavigation %}
+        <ul class="navList">
+  {%- for entry in navPages %}
+          <li class="navItem{%- if entry.url == page.url %} active{%- endif %}">
+            <a href="{{ entry.url }}" class="navLink">{{ entry.title }}</a>
+          </li>
+  {%- endfor %}
+        </ul>
+      </nav>
+    </header-container>
+  </header>
+  <main>
+    {{ content }}
+  <section class="bio">
+    <bio-container>
+      <img
+        src="/media/ChrisIsabella.jpg"
+        alt="Topher Isabella - Filmmaker and photographer"
+        class="bioImage"
+        width="200"
+        height="200">
+      <h1 class="bioName">Topher Isabella</h1>
+      <p class="bioTitle">Filmmaker & Photographer</p>
+      <bio-text>
+        <p>I am a College for Creative Studies Detroit graduate with five years experience in Directing, Producing, Editing, Cinematography, Sound Design, and Photography.</p>
+      </bio-text>
+    </bio-container>
+  </section>
+  </main>
+  <footer><p>&copy; Copyright Topher Isabella 2025</p></footer>
+</page-container>
+</body>
+</html>

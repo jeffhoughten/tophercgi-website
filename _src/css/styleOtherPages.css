@@ -1,0 +1,29 @@
+.bio {
+  order: 2;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects {
+  margin: 0 auto;
+  text-align: center;
+  order: 1;
+}
+
+video-desc {
+  display: block;
+  max-width: 928px;
+}
+
+@media (min-width: 768px) {
+  .bio {
+    order: 1;
+    border-top: none;
+  }
+  
+  .projects {
+    text-align: left;
+    padding: var(--space-xl) calc(var(--space-xl) * 1.5);
+    margin: 0;
+    order: 2;
+  }
+}
