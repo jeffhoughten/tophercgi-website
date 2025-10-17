@@ -46,8 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {font-size: 2rem;}
-h2 {font-size: 1.75rem;}
-h3 {font-size: 1.5rem;}
+h2 {font-size: 1.5rem;}
+h3 {font-size: 1.25rem;}
 
 a {
   color: inherit;
@@ -167,6 +167,10 @@ hamburger-line {
   margin-bottom: var(--space-sm);
 }
 
+.navItem.active {
+  color: var(--accent);
+}
+
 .navLink {
   display: block;
   font-size: 1.5rem;
@@ -180,7 +184,14 @@ hamburger-line {
   color: var(--accent);
 }
 
-.navLink.active {
+.navBcLink {
+  font-family: var(--font-primary);
+  line-height: 1.2;
+  font-weight: 300; 
+  font-size: 2rem;
+}
+
+.navBcLink:hover {
   color: var(--accent);
 }
 

@@ -1,6 +1,6 @@
 ---
 layout: base.liquid
-title: Topher Isabella
+title: CV | Topher Isabella
 description: Topher Isabella Digital Portfolio
 eleventyNavigation:
     key   : cv

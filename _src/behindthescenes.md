@@ -1,6 +1,6 @@
 ---
 layout: base.liquid
-title: Topher Isabella
+title: Behind The Scenes | Topher Isabella
 description: Topher Isabella Digital Portfolio
 eleventyNavigation:
     key   : behindthescenes
@@ -11,13 +11,11 @@ pageSpecificStyle: '<link rel="stylesheet" href="/css/stylePhotoGrid.css" type="
 <section class="projects">
         <h1>Behind The Scenes</h1>
         <photo-grid>
-{%- for photocollection in collections.photos %}
-{%- if photocollection.data.parent == blank and photocollection.data.category == "Behind The Scenes"%}
+{%- for btscollection in collections.bts %}
           <photo-item>
-            <a href="{{ photocollection.url }}"><img class="photo" src="/media/photography/{{ photocollection.data.title|slug }}/{{ photocollection.data.thumbnail }}" alt="{{ photocollection.data.title }}"></a>
-            <h5>{{ photocollection.data.title }}</h5>
+            <a href="{{ btscollection.url }}"><img class="photo" src="/media/behindthescenes/{{ btscollection.data.title|slug }}/{{ btscollection.data.thumbnail }}" alt="{{ btscollection.data.title }}"></a>
+            <h2>{{ btscollection.data.title }}</h2>
           </photo-item>
-{%- endif %}
 {%- endfor %}
         </photo-grid>
       </section>

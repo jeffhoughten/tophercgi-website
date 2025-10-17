@@ -14,18 +14,26 @@ eleventyComputed:
     category:   '{{ photocollection.category }}'
     children:   '{{ photocollection.children }}'
     size:       '{{ photocollection.size }}'
+    eleventyNavigation:
+        key   : '{{ photocollection.title }}'
+        parent: '{%- if photocollection.parent != blank %}{{ photocollection.parent }}{%- else %}{{ photocollection.category }}{%- endif %}'
 pageSpecificStyle: '<link rel="stylesheet" href="/css/stylePhotoGridLB.css" type="text/css">'
 ---
 {%- assign parent = photocollection.parent %}
 <section class="projects">
-        <h1>{{ photocollection.title }}</h1>
+{%- assign crumbs = collections.all | eleventyNavigationBreadcrumb: eleventyNavigation.key %}
+{%- for crumb in crumbs %}
+            <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+{%- if not loop.last %} > {%- endif %}
+{%- endfor %}
+{{ photocollection.title }}<br/><br/>
         <photo-grid>
 {%- if photocollection.children %}
 {%- for photochildset in collections.photos %}
 {%- if photochildset.data.parent == photocollection.title %}
           <photo-item>
             <a href="{{ photochildset.url }}"><img class="photo" src="/media/photography/{{ photochildset.data.parent|slug }}/{{ photochildset.data.title|slug }}/{{ photochildset.data.thumbnail}}" alt="{{ photochildset.data.parent }}-{{ photochildset.data.title }}"></a>
-            <h5>{{ photochildset.data.title }}</h5>
+            <h2>{{ photochildset.data.title }}</h2>
           </photo-item>
 {%- endif %}
 {%- endfor %}
@@ -36,8 +44,11 @@ pageSpecificStyle: '<link rel="stylesheet" href="/css/stylePhotoGridLB.css" type
             <img class="photo" src="/media/photography/{%- if parent != blank %}{{ photocollection.parent|slug }}/{%- endif %}{{ photocollection.title|slug }}/{%- if parent != blank %}{{ photocollection.parent|slug }}-{%- endif %}{{ photocollection.title|slug }}{{ i }}.jpg" alt="{{ photocollection.category }}-{%- if parent != blank %}{{ photocollection.parent }}-{%- endif %}{{ photocollection.title }}">
           </photo-item>
 {%- endfor %}
+{%- endif %}
         </photo-grid>
       </section>
+{%- if photocollection.children %}
+{%- else %}
 <lightbox-container id="lightbox">
   <lightbox-content>
     <close-lightbox id="close-lightbox">×</close-lightbox>

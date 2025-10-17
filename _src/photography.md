@@ -1,10 +1,9 @@
 ---
 layout: base.liquid
-title: Topher Isabella
+title: Photography | Topher Isabella
 description: Topher Isabella Digital Portfolio
 eleventyNavigation:
-    key   : photography
-    title : Photography
+    key   : Photography
     order : 5
 pageSpecificStyle: '<link rel="stylesheet" href="/css/stylePhotoGrid.css" type="text/css">'
 ---

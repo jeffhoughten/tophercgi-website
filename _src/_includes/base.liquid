@@ -17,7 +17,7 @@
   <title>{{ title }}</title>
   <meta name="author" content="Jeff Houghten">
   <meta name="generator" content="{{ eleventy.generator }}">
-  <link rel="preload" href="/css/raleway.css" type="text/css">
+  <link rel="preload" href="/css/raleway.css" as="style" type="text/css">
   <link rel="stylesheet" href="/css/raleway.css" type="text/css">
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   {{ pageSpecificStyle }}
@@ -44,7 +44,7 @@
         <hamburger-line></hamburger-line>
       </label>
       <nav class="nav" aria-label="Main navigation">
-  {%- assign navPages = collections.all | eleventyNavigation %}
+  {%- assign navPages = collections.all | eleventyNavigation | rootNav %}
         <ul class="navList">
   {%- for entry in navPages %}
           <li class="navItem{%- if entry.url == page.url %} active{%- endif %}">

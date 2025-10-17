@@ -1,19 +1,18 @@
 ---
 layout: base.liquid
-title: Topher Isabella
+title: Crew Work | Topher Isabella
 description: Topher Isabella Digital Portfolio
 eleventyNavigation:
-    key   : crewwork
-    title : Crew Work
+    key   : Crew Work
     order : 1
 pageSpecificStyle: '<link rel="stylesheet" href="/css/styleVideoListPages.css" type="text/css">'
 ---
 <section class="projects">
-        <h3>Film projects that I have collaborated on as a crew member:</h3><hr/><br/>
+        <h1>Film projects that I have collaborated on as a crew member:</h1><hr/><br/>
 {%- for video in collections.videos %}
-{%- if video.data.category == 'crewwork' %}
+{%- if video.data.category == 'Crew Work' %}
         <video-link>
-          <a href="{{ video.url }}"><img src="/media/video/{{ video.data.thumbnail }}" alt="{{ video.data.title }}"></a><h4>{{ video.data.title }}</h4><br />
+          <a href="{{ video.url }}"><img src="/media/video/{{ video.data.thumbnail }}" alt="{{ video.data.title }}"></a><h2>{{ video.data.shortTitle }}</h2><br />
         </video-link>
 {%- endif %}
 {%- endfor %}

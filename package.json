@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
+    "deploy": "rsync -azh --info=progress2 --stats ./_site/ $FTPUSER@$FTPHOST:~/tophercgi/",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

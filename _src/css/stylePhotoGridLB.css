@@ -4,6 +4,8 @@
 }
 
 .projects {
+  margin: 0 auto;
+  text-align: center;
   order: 1;
 }
 
@@ -111,6 +113,13 @@ lightbox-counter {
   }
 
   photo-grid {
-    flex-direction: row;
+    display: block;
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  photo-grid {
+    column-count: 4;
   }
 }

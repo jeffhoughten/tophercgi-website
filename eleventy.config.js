@@ -16,6 +16,11 @@ export default function (eleventyConfig) {
         return JSON.stringify(data, null, "\t")
     });
 
+    eleventyConfig.addFilter('rootNav', function(nav) {
+        return nav.filter(item => !item.parent);
+    });
+
+
     return {
         dir: {
             data: "_data",

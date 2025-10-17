@@ -1,18 +1,26 @@
 ---
 layout: base.liquid
-title: Topher Isabella
+title: Environment | Photography | Topher Isabella
 description: Topher Isabella Digital Portfolio
 permalink: '/photography/environment/'
+eleventyNavigation:
+    key   : Environment
+    parent: Photography
 pageSpecificStyle: '<link rel="stylesheet" href="/css/stylePhotoGrid.css" type="text/css">'
 ---
 <section class="projects">
-        <h1>Environment</h1>
+{%- assign crumbs = collections.all | eleventyNavigationBreadcrumb: eleventyNavigation.key %}
+{%- for crumb in crumbs %}
+            <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+{%- if not loop.last %} > {%- endif %}
+{%- endfor %}
+        Environment
         <photo-grid>
 {%- for photocollection in collections.photos %}
 {%- if photocollection.data.parent == blank and photocollection.data.category == "Environment"%}
           <photo-item>
             <a href="{{ photocollection.url }}"><img class="photo" src="/media/photography/{{ photocollection.data.title|slug }}/{{ photocollection.data.thumbnail }}" alt="{{ photocollection.data.title }}"></a>
-            <h5>{{ photocollection.data.title }}</h5>
+            <h2>{{ photocollection.data.title }}</h2>
           </photo-item>
 {%- endif %}
 {%- endfor %}
